@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     const random = this.getRandomInt(0, this.bag.length - 1);
     const cube = this.bag[random];
     this.cubes.push(cube);
-    if (this.cubes.length === 19) {
+    if (this.cubes.length === 20) {
       this.calculateResult();
     }
   }

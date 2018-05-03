@@ -3,7 +3,7 @@
 </mat-toolbar>
 
 <mat-card>
-  <button mat-raised-button color="primary" (click)="pick()" [disabled]="cubes.length===19">Pick a Cube</button>
+  <button mat-raised-button color="primary" (click)="pick()" [disabled]="cubes.length===20">Pick a Cube</button>
   <button mat-raised-button color="warn" (click)="startOver()">Start Over</button>
 
   <div *ngIf="cubes.length>0" class="cubes-wrapper">
