@@ -1,16 +1,24 @@
-<button (click)="pick()" [disabled]="cubes.length===19">Pick a Cube</button>
-<button (click)="startOver()">Start Over</button>
+<mat-toolbar color="primary">
+  <span>Pet Store Cube For Steven</span>
+</mat-toolbar>
 
-<ng-container *ngIf="result">
-  <h3>Game is over. Here is Result:</h3>
-  <ul>
-    <li>Blue: {{result.blue}}/20</li>
-    <li>Red: {{result.red}}/20</li>
-    <li>Yellow: {{result.yellow}}/20</li>
-  </ul>
-</ng-container>
+<mat-card>
+  <button mat-raised-button color="primary" (click)="pick()" [disabled]="cubes.length===19">Pick a Cube</button>
+  <button mat-raised-button color="warn" (click)="startOver()">Start Over</button>
 
-<h3>Picked cubes</h3>
-<div class="cubes">
-  <div *ngFor="let cube of cubes" class="cube" [style.backgroundColor]="cube.color"></div>
-</div>
+  <div *ngIf="cubes.length>0" class="cubes-wrapper">
+    <h3>Cubes</h3>
+    <div class="cubes">
+      <div *ngFor="let cube of cubes" class="cube" [style.backgroundColor]="cube.color"></div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="result">
+    <h3>Game is over. Here is Result:</h3>
+    <ul>
+      <li>Blue: {{result.blue}}/20</li>
+      <li>Red: {{result.red}}/20</li>
+      <li>Yellow: {{result.yellow}}/20</li>
+    </ul>
+  </ng-container>
+</mat-card>
